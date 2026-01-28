@@ -38,15 +38,15 @@ public class LRUCache {
         DNode node = map.get(key);
         if (node == null) {
             // 情况1：键不存在，新建节点
-            DNode newNode = new DNode(key, value);
+            DNode newNode = new DNode(key, value); // node的key与map的key相等
             map.put(key, newNode); // 哈希表添加映射
-            DNodeUtil.addToHead(newNode, head);    // 链表插入头部
-            size++;                // 容量+1
+            DNodeUtil.addToHead(newNode, head); // 链表插入头部
+            size++; // 容量+1
             // 容量满，淘汰最少使用的元素
             if (size > capacity) {
                 DNode lruNode = DNodeUtil.removeTail(tail); // 删除链表尾节点
-                map.remove(lruNode.key);      // 删除哈希表映射
-                size--;                       // 容量-1
+                map.remove(lruNode.key); // 删除哈希表映射
+                size--; // 容量-1
             }
         } else {
             // 情况2：键存在，更新值并移到头部
@@ -69,8 +69,7 @@ public class LRUCache {
     }
 }
 
-/*
-class LRUCache2 extends LinkedHashMap<Integer, Integer> {
+/*class LRUCache2 extends LinkedHashMap<Integer, Integer> {
     private int capacity; // 缓存最大容量
     // 初始化：指定容量，加载因子0.75（默认），访问顺序排序
     public LRUCache2(int capacity) {
