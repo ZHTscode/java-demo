@@ -12,7 +12,7 @@ public class DNodeUtil {
     }
     // 从链表中删除指定节点
     public static void removeNode(DNode node) {
-        node.prev.next = node.next;
+        node.prev.next = node.next; // 相比于单链表，需要遍历链表寻找前驱节点
         node.next.prev = node.prev;
     }
     // 将节点移到头部（先删后插）
