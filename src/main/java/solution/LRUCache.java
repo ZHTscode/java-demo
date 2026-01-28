@@ -69,6 +69,7 @@ public class LRUCache {
     }
 }
 
+/*
 class LRUCache2 extends LinkedHashMap<Integer, Integer> {
     private int capacity; // 缓存最大容量
     // 初始化：指定容量，加载因子0.75（默认），访问顺序排序
@@ -90,4 +91,4 @@ class LRUCache2 extends LinkedHashMap<Integer, Integer> {
     public void put(int key, int value) {
         super.put(key, value);
     }
-}
+}*/
