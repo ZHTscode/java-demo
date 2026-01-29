@@ -5,13 +5,14 @@ import java.util.List;
 public class WordBreak {
     // 方法一：动态规划
     public boolean wordBreak(String s, List<String> wordDict) {
-        boolean[] dp = new boolean[s.length() + 1];
+        boolean[] dp = new boolean[s.length() + 1]; // dp[i] 表示 s 的前 i 个字符是否可以拆分
         dp[0] = true;
         for (int i = 1; i <= s.length(); i++) {
             for (int j = 0; j < i; j++) {
                 if (dp[j] && wordDict.contains(s.substring(j, i))) {
+                    // 如果 dp[j] 为 true 且 s 的子串 s[j..i-1] 在字典中，则 dp[i] 为 true
                     dp[i] = true;
-                    break;
+                    break; // 提前退出内层循环
                 }
             }
         }
