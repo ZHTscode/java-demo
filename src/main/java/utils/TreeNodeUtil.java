@@ -37,7 +37,7 @@ public class TreeNodeUtil {
         while (!queue.isEmpty() && index < arr.length) {
             TreeNode cur = queue.poll(); // 队首元素出队
             // 构建左节点
-            if (index < arr.length && arr[index] != -1) {
+            if (arr[index] != -1) {
                 cur.left = new TreeNode(arr[index]); // 先分配值，后入队
                 queue.offer(cur.left); // 左节点入队，等待分配子节点
             }

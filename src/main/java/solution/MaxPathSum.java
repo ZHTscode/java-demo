@@ -9,10 +9,10 @@ public class MaxPathSum {
         maxPathDown(root);
         return maxSum;
     }
-    // 计算从当前节点出发的最大路径和
+    // 计算从当前节点出发的最大路径和（只能选择左或右子树）
     private int maxPathDown(TreeNode node) {
         if (node == null) return 0;
-        // 递归计算左右子树的最大路径和，取正值部分
+        // 递归计算左右子树的最大路径和，取正值部分（为负就不取该节点连的路）
         int left = Math.max(0, maxPathDown(node.left));
         int right = Math.max(0, maxPathDown(node.right));
         // 计算通过当前节点的最大路径和
