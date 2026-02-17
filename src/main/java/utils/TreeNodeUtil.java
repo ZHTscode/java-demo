@@ -204,7 +204,7 @@ public class TreeNodeUtil {
             }
             System.out.println(sb);
         }
-        System.out.println("====================================");
+        System.out.println("==================================");
     }
     // 递归填充树形二维数组的辅助方法
     private static void fillTreeMatrix(TreeNode node, List<List<String>> matrix, int row, int left, int right) {

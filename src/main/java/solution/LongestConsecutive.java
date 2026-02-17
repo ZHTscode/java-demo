@@ -3,7 +3,7 @@ package solution;
 import java.util.HashSet;
 import java.util.Set;
 
-class LongestConsecutive {
+public class LongestConsecutive {
     public int longestConsecutive(int[] nums) {
         // 1. 把数组存入哈希集合，去重+O(1)查找
         Set<Integer> numSet = new HashSet<>();
