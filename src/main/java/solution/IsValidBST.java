@@ -2,36 +2,25 @@ package solution;
 
 import basic.TreeNode;
 
-//验证二叉搜索树
-public class ValidBST {
-    // 对外暴露的验证方法
+public class IsValidBST {
+    /* 98.验证二叉搜索树 */
     public static boolean isValidBST(TreeNode root) {
         // 初始范围：Long.MIN_VALUE（避免int溢出）、Long.MAX_VALUE
         return validate(root, Long.MIN_VALUE, Long.MAX_VALUE);
     }
-
-    /**
-     * 递归校验节点是否在合法范围
-     * @param node 当前节点
-     * @param lower 下界（当前节点必须大于此值）
-     * @param upper 上界（当前节点必须小于此值）
-     * @return 是否合法
-     */
-    //递归函数 调用自己
+    /* 递归校验节点是否在合法范围
+       node 当前节点
+       lower 下界（当前节点必须大于此值）
+       upper 上界（当前节点必须小于此值）*/
     private static boolean validate(TreeNode node, long lower, long upper) {
-        // 空节点是合法的BST
-        if (node == null) {
-            return true;
-        }
-        // 节点值超出范围，直接返回false
-        if (node.val <= lower || node.val >= upper) {
+
+        if (node == null) return true; // 空节点是合法的BST
+        if (node.val <= lower || node.val >= upper) // 节点值超出范围，直接返回false
             return false;
-        }
         // 递归校验左子树（上界更新为当前节点值）和右子树（下界更新为当前节点值）
         return validate(node.right, node.val, upper) && validate(node.left, lower, node.val);
     }
 
-    // 主方法：测试入口
     public static void main(String[] args) {
         //测试用例0
         TreeNode root0 = new TreeNode(5);

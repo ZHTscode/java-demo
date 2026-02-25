@@ -1,6 +1,7 @@
 package solution;
 
 public class Trie {
+    /* 208. 实现 Trie (前缀树) */
     // Trie 节点内部类（核心结构）
     private static class TrieNode {
         TrieNode[] children; // 子节点数组：a-z 对应下标 0-25

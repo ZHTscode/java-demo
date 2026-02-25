@@ -1,6 +1,7 @@
 package solution;
 
 public class MaxProduct {
+    /* 152. 乘积最大子数组 */
     public int maxProduct(int[] nums) {
         // dpMax[i] 表示以 nums[i] 结尾的子数组的最大乘积
         // dpMin[i] 表示以 nums[i] 结尾的子数组的最小乘积

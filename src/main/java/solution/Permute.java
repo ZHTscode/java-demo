@@ -5,6 +5,7 @@ import java.util.List;
 
 // 与 22.括号生成 类似
 public class Permute {
+    /* 46.全排列 */
     public List<List<Integer>> permute(int[] nums) {
         List<List<Integer>> res = new ArrayList<>();
         List<Integer> path = new ArrayList<>();

@@ -3,6 +3,7 @@ package solution;
 import java.util.*;
 
 public class GroupAnagrams {
+    /* 49. 字母异位词分组 */
     public List<List<String>> groupAnagrams(String[] strs) {
         // 哈希表：key=排序后的字符串，value=对应的异位词列表
         Map<String, List<String>> map = new HashMap<>();

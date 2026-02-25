@@ -1,6 +1,7 @@
 package solution;
 
 public class HammingDistance {
+    /* 461.距离 */
     public int hammingDistance(int x, int y) {
         int z = x ^ y; // 异或操作，相同为 0，不同为 1
         int count = 0; // 计数器，统计不同位数的个数

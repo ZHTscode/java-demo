@@ -7,6 +7,7 @@ import java.util.Stack;
 import static utils.ListNodeUtil.printList;
 
 public class ReverseList {
+    /* 206.反链表 */
     // 迭代写法
     public static ListNode reverseList(ListNode head) {
         ListNode pre = null;

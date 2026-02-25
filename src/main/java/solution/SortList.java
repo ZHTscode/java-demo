@@ -5,6 +5,7 @@ import basic.ListNode;
 import static utils.ListNodeUtil.printList;
 
 public class SortList {
+    /* 148. 排序链表 */
     public ListNode sortList(ListNode head) {
         if (head == null || head.next == null) return head;
         // 使用快慢指针找到中点前一个节点

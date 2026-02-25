@@ -6,6 +6,7 @@ import java.util.Stack;
 
 // 方法一：基于双栈实现
 public class MinStack {
+    /* 155. 最小栈 */
     private Stack<Integer> dataStack;
     private Stack<Integer> minStack;
 

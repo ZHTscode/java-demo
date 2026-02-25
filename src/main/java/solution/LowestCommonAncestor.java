@@ -3,6 +3,7 @@ package solution;
 import basic.TreeNode;
 
 public class LowestCommonAncestor {
+    /* 236. 二叉树的最近公共祖先 */
     public static TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
         // 递归终止条件：遇到空节点 或 找到p/q，直接返回当前节点
         if (root == null || root == p || root == q) return root;

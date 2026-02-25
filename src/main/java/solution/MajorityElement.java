@@ -1,6 +1,7 @@
 package solution;
 
 public class MajorityElement {
+    /* 169.多数元素 */
     public int majorityElement(int[] nums) {
         if (nums == null || nums.length == 0) return 0;
         int count = 1; // 初始化计数器为1

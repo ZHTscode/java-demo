@@ -5,6 +5,7 @@ package solution;
 // nums.length = n + 1
 
 public class FindDuplicate {
+    /* 287.寻重复数 */
     // 核心：快慢指针找环入口下标，即为重复元素
     // 重复数字指向同一个下标，形成环
     public int findDuplicate(int[] nums) {

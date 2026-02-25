@@ -4,6 +4,7 @@ import basic.TreeNode;
 import utils.TreeNodeUtil;
 
 public class DiameterOfBinaryTree {
+    /* 543. 二叉树的直径 */
     // 核心：二叉树的直径 = 所有节点中（左子树深度 + 右子树深度）的最大值
     // 方法一：利用数组引用传递（Java 无指针但数组是引用）来修改全局变量
     public int diameterOfBinaryTree(TreeNode root) {

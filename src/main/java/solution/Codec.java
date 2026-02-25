@@ -6,6 +6,7 @@ import utils.TreeNodeUtil;
 import java.util.*;
 
 public class Codec {
+    /* 297. 二叉树的序列化与反序列化 */
     // 序列化：前序遍历
     public String serialize(TreeNode root) {
         StringBuilder sb = new StringBuilder();

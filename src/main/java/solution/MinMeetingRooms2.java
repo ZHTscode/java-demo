@@ -5,6 +5,7 @@ import java.util.Arrays;
 import java.util.PriorityQueue;
 
 public class MinMeetingRooms2 {
+    /* 253. 会议室 II */
     // 解法一：最小堆
     public int minMeetingRooms(int[][] intervals) {
         if (intervals == null || intervals.length == 0) return 0;

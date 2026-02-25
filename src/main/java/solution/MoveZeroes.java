@@ -1,6 +1,7 @@
 package solution;
 
 public class MoveZeroes {
+    /* 283.移动零 */
     public void moveZeroes(int[] nums) {
         int i = 0;
         for (int j = 0; j < nums.length; j++) {

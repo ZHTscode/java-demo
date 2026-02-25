@@ -1,6 +1,7 @@
 package solution;
 
 public class CountSubstrings {
+    /* 647.回文子串 */
     // 方法一：暴力法
     public int countSubstrings(String s) {
         int count = 0;

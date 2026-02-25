@@ -12,6 +12,7 @@ import java.util.Arrays;
 */
 
 public class MaxCoins {
+    /* 312.戳球 */
     // 解法一：记忆化搜索（递归 + 缓存）
     public int[][] rec; // 记录爆破区间[i, j]能获得的最大硬币数
     public int[] val; // val[i]表示第i个气球上的数字

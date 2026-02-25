@@ -5,6 +5,7 @@ import java.util.Deque;
 import java.util.Stack;
 
 public class DecodeString {
+    /* 394. 字符串解码 */
     // 解法一：栈 + 双向队列
     public String decodeString(String s) {
         Deque<Integer> numStack = new ArrayDeque<>(); // 当前要重复的次数（数字栈）

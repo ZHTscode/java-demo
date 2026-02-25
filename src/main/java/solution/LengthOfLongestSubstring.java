@@ -4,7 +4,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 public class LengthOfLongestSubstring {
-    // 计算无重复字符的最长子串长度
+    /* 3. 无重复字符的最长子串 */
     public int lengthOfLongestSubstring(String s) {
         // 存储当前滑动窗口内的字符，快速判断重复
         Set<Character> charSet = new HashSet<>();

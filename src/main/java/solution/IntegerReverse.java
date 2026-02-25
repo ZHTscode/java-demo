@@ -1,6 +1,7 @@
 package solution;
 
 public class IntegerReverse {
+    /* 7.整数反转 */
     public int reverse(int x) {
         int res = 0;
         while (x != 0) {

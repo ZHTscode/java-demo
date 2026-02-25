@@ -1,6 +1,7 @@
 package solution;
 
 public class Z_Convert {
+    /* 6. Z 字形变换 */
     public String convert(String s, int numRows) {
         // 边界条件：行数为1或行数大于等于字符串长度，直接返回原字符串
         if (numRows == 1 || numRows >= s.length()) {

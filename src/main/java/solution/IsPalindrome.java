@@ -10,6 +10,7 @@ import static utils.ListNodeUtil.findMiddleNode;
 import static utils.ListNodeUtil.reverseList;
 
 public class IsPalindrome {
+    /* 234.回文链表 */
     // 方法一：使用数组存储链表节点值，然后使用双指针判断数组是否为回文
     public static boolean isPalindrome(ListNode head){
         List<Integer> list = new ArrayList<>();

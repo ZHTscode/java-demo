@@ -5,6 +5,7 @@ import utils.ArrayUtil;
 import java.util.HashMap;
 
 public class TwoSum {
+    /* 1. 两数之和 */
     public int[] twoSum(int[] nums, int target) {
         // 哈希表：key = 数组元素值，value = 该元素对应的数组下标
         HashMap<Integer, Integer> map = new HashMap<>();

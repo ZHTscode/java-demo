@@ -3,6 +3,7 @@ package solution;
 import java.util.Arrays;
 
 public class Rob {
+    /* 198.打家劫舍 */
     public int rob(int[] nums) {
         if (nums == null || nums.length == 0) return 0;
         int[] dp = new int[nums.length]; // dp数组，dp[i]表示前i+1个房子能抢到的最大金额总和

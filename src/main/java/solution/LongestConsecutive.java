@@ -4,6 +4,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 public class LongestConsecutive {
+    /* 128. 最长连续序列 */
     public int longestConsecutive(int[] nums) {
         // 1. 把数组存入哈希集合，去重+O(1)查找
         Set<Integer> numSet = new HashSet<>();

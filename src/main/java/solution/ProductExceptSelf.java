@@ -1,6 +1,7 @@
 package solution;
 
 public class ProductExceptSelf {
+    /* 238. 除自身以外数组的乘积 */
     public int[] productExceptSelf(int[] nums) {
         if (nums == null || nums.length == 0) return new int[0];
         int[] result = new int[nums.length]; // 结果数组

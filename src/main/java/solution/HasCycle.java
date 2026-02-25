@@ -3,6 +3,7 @@ package solution;
 import basic.ListNode;
 
 public class HasCycle {
+    /* 141.链表 */
     public boolean hasCycle(ListNode head) {
         if (head == null || head.next == null) return false;
         ListNode slow = head;

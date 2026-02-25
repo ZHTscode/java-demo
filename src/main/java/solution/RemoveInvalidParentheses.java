@@ -3,6 +3,7 @@ package solution;
 import java.util.*;
 
 public class RemoveInvalidParentheses {
+    /* 301. 删除无效的括号 */
     /* 解法一：BFS
      * 初始状态：原字符串 s
      * 每一层 BFS：尝试删除当前字符串中每一个括号（跳过字母）
@@ -69,12 +70,12 @@ public class RemoveInvalidParentheses {
         recur(s, 0); // 从左到右遍历字符串，尝试删除每一个括号
         return res;
     }
-    // last: 当前处理的字符串
-    // index: 从 last 的哪个位置开始尝试删除
+    /* last: 当前处理的字符串
+       index: 从 last 的哪个位置开始尝试删除 */
     public void recur(String last, int index) {
         // 剪枝：如果要删的比剩下的还多 → 不可能完成，直接返回
         if (leftCount + rightCount > last.length() - index) return;
-        // 递归终止条件：已经删够了 || 遍历完字符串
+        // 递归终止条件：已经删够了 OR 遍历完字符串
         if (leftCount == 0 && rightCount == 0 || index >= last.length()) {
             if (isValid2(last)) res.add(last); // 当前字符串有效则加入结果
             return;
@@ -85,19 +86,15 @@ public class RemoveInvalidParentheses {
             if (i != index && last.charAt(i) == last.charAt(i - 1)) continue;
             // 尝试删除左括号
             if (last.charAt(i) == '(' && leftCount > 0) {
-                // 可以删除左括号，尝试删除
-                leftCount--;
+                leftCount--; // 可以删除左括号，尝试删除
                 String newLast = last.substring(0, i) + last.substring(i + 1);
-                // 递归：继续尝试删除
-                recur(newLast, i);
-                // 回溯：撤销删除
-                leftCount++;
-            } else if (last.charAt(i) == ')' && rightCount > 0) {
-                // 可以删除右括号，尝试删除
-                rightCount--;
+                recur(newLast, i); // 递归：继续尝试删除
+                leftCount++; // 回溯：撤销删除
+            }
+            else if (last.charAt(i) == ')' && rightCount > 0) {
+                rightCount--; // 可以删除右括号，尝试删除
                 String newLast = last.substring(0, i) + last.substring(i + 1);
-                // 递归：继续尝试删除
-                recur(newLast, i);
+                recur(newLast, i); // 递归：继续尝试删除
                 rightCount++; // 回溯：撤销删除
             }
         }

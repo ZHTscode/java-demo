@@ -2,11 +2,10 @@ package solution;
 import java.util.*;
 
 public class MaxSlidingWindow {
-    /*
-    解法一：优先队列（最大堆） 时间复杂度：O(nlogk)  空间复杂度：O(k)
-    懒删除：不主动清理堆，只在堆顶过期时删除
-    时间复杂度 O(n log k)：每个元素入堆一次，最多出堆一次
-    */
+    /* 239.窗口最大值
+       解法一：优先队列（最大堆） 时间复杂度：O(nlogk)  空间复杂度：O(k)
+       懒删除：不主动清理堆，只在堆顶过期时删除
+       时间复杂度 O(n log k)：每个元素入堆一次，最多出堆一次 */
     public int[] maxSlidingWindow(int[] nums, int k) {
         int n = nums.length;
         // pair1 和 pair2 都是长度为2的数组，pair[0] 存储数值，pair[1] 存储索引
@@ -32,12 +31,10 @@ public class MaxSlidingWindow {
         }
         return ans;
     }
-     /*
-     解法二：双端队列 时间复杂度：O(n)  空间复杂度：O(k)
-     核心：维护一个单调递减队列（存储下标），队头始终是最大值
-     每个元素最多入队/出队一次 → 总操作 O(n)
-     队头永远是最大值 → 获取最大值 O(1)
-     */
+     /* 解法二：双端队列 时间复杂度：O(n)  空间复杂度：O(k)
+        核心：维护一个单调递减队列（存储下标），队头始终是最大值
+        每个元素最多入队/出队一次 → 总操作 O(n)
+        队头永远是最大值 → 获取最大值 O(1) */
     public int[] maxSlidingWindow2(int[] nums, int k) {
         int n = nums.length;
         // 初始化前 k 个元素

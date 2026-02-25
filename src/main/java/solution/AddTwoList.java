@@ -6,6 +6,7 @@ import static utils.ListNodeUtil.buildList;
 import static utils.ListNodeUtil.printList;
 
 public class AddTwoList {
+    /* 2. 两数相加 */
     public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
         ListNode dummyHead = new ListNode(0); // 虚拟头节点（简化链表构建）
         ListNode cur = dummyHead; // 当前指针，用于构建结果链表

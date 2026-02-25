@@ -3,6 +3,7 @@ package solution;
 import java.util.Arrays;
 
 public class LengthOfLIS {
+    /* 300. 最长递增子序列 */
     // 解法一：动态规划
     public int lengthOfLIS(int[] nums) {
         if (nums == null || nums.length == 0) return 0;

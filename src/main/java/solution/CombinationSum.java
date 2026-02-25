@@ -14,13 +14,12 @@ import java.util.List;
  */
 
 public class CombinationSum {
-    /*
+    /* 39.组总和
       解法一：循环 + 递归（最优）
       target   当前剩余需要凑出的和
       curSum   当前已选数字的和
       path     当前已选的数字列表
-      start    当前可选数字的起始索引（防止重复组合）
-      */
+      start    当前可选数字的起始索引（防止重复组合）*/
     List<List<Integer>> ans = new ArrayList<>();
     public List<List<Integer>> combinationSum(int[] candidates, int target) {
         backtrack(candidates, target, 0, new ArrayList<>(), 0);
@@ -39,14 +38,12 @@ public class CombinationSum {
             path.remove(path.size() - 1);
         }
     }
-    /*
-      解法二：双重递归
-      i             当前可选数字的起始索引
-      left          当前剩余需要凑出的和
-      candidates    可选数字列表
-      ans           结果集
-      path          当前已选的数字列表
-      */
+    /* 解法二：双重递归
+       i             当前可选数字的起始索引
+       left          当前剩余需要凑出的和
+       candidates    可选数字列表
+       ans           结果集
+       path          当前已选的数字列表 */
     public List<List<Integer>> combinationSum2(int[] candidates, int target) {
         Arrays.sort(candidates);
         List<List<Integer>> ans = new ArrayList<>();

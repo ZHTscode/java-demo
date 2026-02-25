@@ -1,6 +1,7 @@
 package solution;
 
 public class MaxProfit2 {
+    /* 122. 买卖股票的最佳时机 II */
     public int maxProfit(int[] prices) {
         if (prices.length == 0) return 0;
         int n = prices.length;

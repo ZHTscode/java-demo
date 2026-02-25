@@ -1,6 +1,7 @@
 package solution;
 
 public class SearchMatrix {
+    /* 74.搜索二维矩阵 */
     public boolean searchMatrix(int[][] matrix, int target) {
         if (matrix == null || matrix.length == 0 || matrix[0].length == 0) return false;
         // 从右上角开始搜索

@@ -5,6 +5,7 @@ import java.util.Arrays;
 import java.util.List;
 
 public class ThreeSum {
+    /* 15. 三数之和 */
     public List<List<Integer>> threeSum(int[] nums) {
         List<List<Integer>> result = new ArrayList<>();
         // 1. 排序，为去重和双指针做准备

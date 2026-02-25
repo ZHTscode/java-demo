@@ -1,6 +1,7 @@
 package solution;
 
 public class MyAtoi {
+    /* 8. 字符串转换整数 (atoi) */
     public int myAtoi(String s) {
         int n = s.length();
         int i = 0;

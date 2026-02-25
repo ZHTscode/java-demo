@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.Queue;
 
 public class CanFinish {
+    /* 207. 课程表 */
     // 解法一：kahn算法
     public boolean canFinish(int numCourses, int[][] prerequisites) {
         // 1. 构建邻接表和入度数组

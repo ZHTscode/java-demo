@@ -3,6 +3,7 @@ package solution;
 import java.util.*;
 
 public class ReconstructQueue {
+    /* 406.根据身高重建队列 */
     // 解法一：排序 + 插入
     public int[][] reconstructQueue(int[][] people) {
         // 排序：身高降序，k 升序

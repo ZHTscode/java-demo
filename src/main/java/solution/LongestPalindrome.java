@@ -1,6 +1,7 @@
 package solution;
 
 public class LongestPalindrome {
+    /* 5. 最长回文子串 */
     // 记录最长回文子串的起始索引和长度
     private int start = 0;
     private int maxLen = 0;

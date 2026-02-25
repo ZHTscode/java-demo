@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class GenerateParenthesis {
+    /* 22.括生成 */
     public List<String> generateParenthesis(int n) {
         List<String> res = new ArrayList<>();
         StringBuilder path = new StringBuilder();

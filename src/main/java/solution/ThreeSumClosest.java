@@ -3,6 +3,7 @@ package solution;
 import java.util.Arrays;
 
 public class ThreeSumClosest {
+    /* 16. 最接近的三数之和 */
     // 核心解题方法
     public static int threeSumClosest(int[] nums, int target) {
         // 1. 对数组进行排序，是双指针解法的前提

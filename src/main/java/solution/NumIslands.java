@@ -1,6 +1,7 @@
 package solution;
 
 public class NumIslands {
+    /* 200. 岛屿数量 */
     public int numIslands(char[][] grid) {
         int count = 0;
         System.out.println(grid.length);

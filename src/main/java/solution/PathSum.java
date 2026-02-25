@@ -6,7 +6,8 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class PathSum {
-    // 方法一：前缀和 + DFS + 回溯 （最优）
+    /* 437.路总和 III */
+    // 解法一：前缀和 + DFS + 回溯 （最优）
     public int pathSum(TreeNode root, int targetSum) {
         Map<Long, Integer> prefixMap = new HashMap<>();
         // 前缀和：从根节点到当前节点的路径上，所有节点值的累加和
@@ -38,7 +39,7 @@ public class PathSum {
         return res;
     }*/
 
-    // 方法二：双重递归
+    // 解法二：双重递归
     public int pathSum2(TreeNode root, int targetSum) {
         if (root == null) return 0;
         // “以当前节点为端点的路径数” + “左子树中所有合法路径数” + “右子树中所有合法路径数”

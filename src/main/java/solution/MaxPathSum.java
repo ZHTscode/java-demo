@@ -3,6 +3,7 @@ package solution;
 import basic.TreeNode;
 
 public class MaxPathSum {
+    /* 124. 二叉树中的最大路径和 */
     private int maxSum;
     public int maxPathSum(TreeNode root) {
         maxSum = Integer.MIN_VALUE;

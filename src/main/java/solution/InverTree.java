@@ -7,6 +7,7 @@ import java.util.LinkedList;
 import java.util.Queue;
 
 public class InverTree {
+    /* 226.二叉树 */
     // 先序遍历--从顶向下交换
     public TreeNode invertTree1(TreeNode root) {
         if (root == null) return null;

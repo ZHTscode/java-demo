@@ -3,6 +3,7 @@ package solution;
 import java.util.List;
 
 public class WordBreak {
+    /* 139.单词拆分 */
     // 方法一：动态规划
     public boolean wordBreak(String s, List<String> wordDict) {
         boolean[] dp = new boolean[s.length() + 1]; // dp[i] 表示 s 的前 i 个字符是否可以拆分

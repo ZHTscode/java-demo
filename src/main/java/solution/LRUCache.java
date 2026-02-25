@@ -8,6 +8,7 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 
 public class LRUCache {
+    /* 146. LRU缓 */
     // 核心成员变量
     private Map<Integer, DNode> map; // 哈希表：key -> 节点
     private DNode head; // 虚拟头节点（不存数据）

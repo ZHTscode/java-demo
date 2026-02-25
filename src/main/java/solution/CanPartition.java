@@ -3,6 +3,8 @@ package solution;
 import java.util.Arrays;
 
 public class CanPartition {
+    /* 416. 分割等和子集
+       解法一：动态规划 */
     public boolean canPartition(int[] nums) {
         int sum = 0;
         for (int num : nums) {
@@ -24,7 +26,7 @@ public class CanPartition {
         }
         return false;
     }
-    // 另类搜索解法
+    /* 解法二：另类搜索解法 */
     public boolean canPartition2(int[] nums) {
         if(nums.length == 1) return false;
         int sum = 0;
