@@ -2,7 +2,7 @@ package solution;
 import java.util.*;
 
 public class MaxSlidingWindow {
-    /* 239.窗口最大值
+    /* 239. 滑动窗口最大值
        解法一：优先队列（最大堆） 时间复杂度：O(nlogk)  空间复杂度：O(k)
        懒删除：不主动清理堆，只在堆顶过期时删除
        时间复杂度 O(n log k)：每个元素入堆一次，最多出堆一次 */
