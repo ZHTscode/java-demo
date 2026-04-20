@@ -11,7 +11,7 @@ public class MaximalRectangle {
             return 0;
         int row = matrix.length;
         int col = matrix[0].length;
-        int[][] left = new int[row][col]; // left[i][j]：(i,j)左边连续1的个数
+        int[][] left = new int[row][col]; // left[i][j]：(i,j)左边连续 1 的个数
         for (int i = 0; i < row; i++) {
             for (int j = 0; j < col; j++) {
                 if (matrix[i][j] == '1')

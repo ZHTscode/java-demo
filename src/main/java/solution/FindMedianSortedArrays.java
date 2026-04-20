@@ -46,10 +46,43 @@ public class FindMedianSortedArrays {
         else                return findKth(nums1, i, nums2, j + k / 2, k - k / 2); // nums2 的前 k/2 个元素肯定不是第 k 小的数
     }
 
+    public double findMedianSortedArrays3(int[] nums1, int[] nums2) {
+        if (nums1.length > nums2.length) { // 保证 nums1 是较短的数组，减少二分次数
+            int[] temp = nums1;
+            nums1 = nums2;
+            nums2 = temp;
+        }
+        int m = nums1.length;
+        int n = nums2.length;
+        int lo = 0; // 二分左边界
+        int hi = m; // 二分右边界
+        while (lo <= hi) {
+            int i = (lo + hi) / 2; // 分割 nums1：前 i 个元素在左边
+            int j = (m + n + 1) / 2 - i; // 分割 nums2：前 j 个元素在左边，保证左右两边总元素数相等（或左多1个）
+            // 处理边界
+            int left1 = (i == 0) ? Integer.MIN_VALUE : nums1[i - 1]; // nums1 左边无元素，用最小值表示
+            int right1 = (i == m) ? Integer.MAX_VALUE : nums1[i]; // nums1 右边无元素，用最大值表示
+            int left2 = (j == 0) ? Integer.MIN_VALUE : nums2[j - 1]; // nums2 左边无元素，用最小值表示
+            int right2 = (j == n) ? Integer.MAX_VALUE : nums2[j]; // nums2 右边无元素，用最大值表示
+            // 满足分割条件：左边所有元素 ≤ 右边所有元素
+            if (left1 <= right2 && left2 <= right1) {
+                // 总长度为奇数：中位数是左边最大值
+                if ((m + n) % 2 == 1)   return Math.max(left1, left2);
+                // 总长度为偶数：中位数是左边最大值和右边最小值的平均
+                else    return (Math.max(left1, left2) + Math.min(right1, right2)) / 2.0;
+            }
+            // nums1 左边太大，需要向左分割 nums1
+            else if (left1 > right2) hi = i - 1;
+            // nums2 左边太大，需要向右分割 nums1
+            else    lo = i + 1;
+        }
+        return 0.0; // 题目保证输入合法，理论上不会走到这里
+    }
+
     public static void main(String[] args) {
         FindMedianSortedArrays fmsa = new FindMedianSortedArrays();
         int[] nums1 = {1, 3};
         int[] nums2 = {2};
-        System.out.println(fmsa.findMedianSortedArrays2(nums1, nums2));
+        System.out.println(fmsa.findMedianSortedArrays3(nums1, nums2));
     }
 }

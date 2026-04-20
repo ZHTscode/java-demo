@@ -24,16 +24,15 @@ public class ClimbStairs {
         if(n <= 2)
             return n;
         for(int i = 3; i <= n; i++) {
-            ppre = pre;
-            pre = cur;
+            ppre = pre; // 前两级台阶就是此前台阶的前一级台阶
+            pre = cur; // 前一级台阶就是此前台阶的当前级台阶
             cur = ppre + pre;
         }
         return cur;
-
     }
 
     public static void main(String[] args) {
         ClimbStairs c = new ClimbStairs();
-        System.out.println(c.climbStairs(3));
+        System.out.println(c.climbStairs2(10));
     }
 }

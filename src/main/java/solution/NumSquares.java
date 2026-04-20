@@ -9,7 +9,7 @@ public class NumSquares {
             dp[i] = i;
             for (int j = 1; j * j <= i; j++) { // 从前往后
                 // dp[i - j * j] ：和为 i - j * j 所需的最少个数
-                dp[i] = Math.min(dp[i], dp[i - j * j] + 1);
+                dp[i] = Math.min(dp[i], dp[i - j * j] + 1); // 数 i 可拆分为 j * j 和 (i - j * j) 的和
             }
         }
         return dp[n];

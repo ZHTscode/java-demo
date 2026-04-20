@@ -51,25 +51,22 @@ public class DecodeString {
             else if (c == '[') {
                 index++; // 跳过 '['
                 StringBuilder sub = dfs(s); // 递归处理子串
-                /*for (int i = 0; i < num; i++) {
-                    res.append(sub);
-                }*/
                 res.append(String.valueOf(sub).repeat(Math.max(0, num)));
                 num = 0; // 重置
             }
-            else if (c == ']') {
+            else if (c == ']')
                 return res; // 结束当前层
-            }
-            else {
+            else
                 res.append(c);
-            }
             index++;
         }
+        index = 0; // 重置全局指针
         return res;
     }
 
     public static void main(String[] args) {
         DecodeString ds = new DecodeString();
         System.out.println(ds.decodeString2("3[a]2[bc]"));
+        System.out.println(ds.decodeString2("3[a2[c]]"));
     }
 }

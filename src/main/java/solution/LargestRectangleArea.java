@@ -3,7 +3,7 @@ package solution;
 import java.util.Stack;
 
 public class LargestRectangleArea {
-    /* 84.图中最大的矩形 */
+    /* 84.柱状图中最大的矩形 */
     /* 解法一：暴力解法（提交超时）
        对每个柱子向左右扩展 O(n²) */
     public int largestRectangleArea(int[] heights) {
@@ -21,7 +21,7 @@ public class LargestRectangleArea {
         }
         return res;
     }
-    /* 解法二：单调递减栈（栈存下标，按高度递减排序）（提交超时）
+    /* 解法二：单调递减栈（栈存下标，按高度递减排序）
        对每个柱子 i，找到它能向左右扩展的最大宽度
        左边界：左边第一个小于 heights[i] 的柱子
        右边界：右边第一个小于 heights[i] 的柱子
@@ -45,13 +45,13 @@ public class LargestRectangleArea {
                         左边界                右边界
                           ↓                    ↓
                          [ ] [新弹出] [此前弹出] [i]
-                              ← 宽度 →
+                             ←----- 宽度 -----→
                    栈为空，左边没有比当前高度小的柱子，左边界为 -1，宽度为 i */
                 int width = stack.isEmpty() ? i : i - stack.peek() - 1;
                 maxArea = Math.max(maxArea, height * width);
             }
             stack.push(i);
-            System.out.println(stack);
+            // System.out.println(stack);
         }
         return maxArea;
     }
@@ -62,7 +62,7 @@ public class LargestRectangleArea {
         int n = heights.length;
         // 1. 哨兵数组
         int[] newHeights = new int[n + 2];
-        System.arraycopy(heights, 0, newHeights, 1, n);
+        System.arraycopy(heights, 0, newHeights, 1, n); // newHeights[0] = 0、newHeights[n+1] = 0
         // 2. 数组模拟栈：只需要一个指针 top
         // 数组大小设为 n+2 绝对够用
         int[] stack = new int[n + 2];
