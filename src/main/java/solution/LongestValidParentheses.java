@@ -12,6 +12,7 @@ public class LongestValidParentheses {
     初始压入 -1：作为基准，方便计算从索引 0 开始的有效长度
     */
     public int longestValidParentheses(String s) {
+        if (s == null || s.length() == 0) return 0;
         Deque<Integer> stack = new ArrayDeque<>();
         stack.push(-1); // 初始化基准值
         int maxLen = 0;
@@ -40,7 +41,7 @@ public class LongestValidParentheses {
                 if (s.charAt(i - 1) == '(') {
                     dp[i] = (i >= 2 ? dp[i - 2] : 0) + 2;
                 }
-                // 情况2: "...))" i-1, i
+                // 情况2: "()()((...))" i-1, i
                 else if (i - dp[i - 1] > 0 && s.charAt(i - dp[i - 1] - 1) == '(') {
                     dp[i] = dp[i - 1] + 2;
                     // 加上更前面的有效长度
@@ -55,19 +56,21 @@ public class LongestValidParentheses {
     }
     /* 解法三：双指针
     从左到右扫描：统计 ( 和 ) 数量
-    从右到左扫描：处理左括号更多的情况
+    从右到左扫描：处理左括号更多的情况 '(()(()'
     当 left == right 时，更新最大长度
     */
     public int longestValidParentheses3(String s) {
+        if (s == null || s.length() == 0) return 0;
         int left = 0, right = 0, maxLen = 0;
-        // 从左到右
+        // 从左到右，确保左侧已扫描的 满足/有希望满足要求
         for (int i = 0; i < s.length(); i++) {
             if (s.charAt(i) == '(')     left++;
             else                        right++;
             if (left == right)          maxLen = Math.max(maxLen, 2 * right);
             else if (right > left)      left = right = 0; // 重置
         }
-        // 从右到左
+        System.out.println(maxLen); // 左括号一直比右括号多，未能更新最大长度
+        // 从右到左，确保右侧已扫描的 满足/有希望满足要求
         left = right = 0;
         for (int i = s.length() - 1; i >= 0; i--) {
             if (s.charAt(i) == '(')     left++;
@@ -80,6 +83,6 @@ public class LongestValidParentheses {
 
     public static void main(String[] args) {
         LongestValidParentheses l = new LongestValidParentheses();
-        System.out.println(l.longestValidParentheses2("(()"));
+        System.out.println(l.longestValidParentheses3("(()(()"));
     }
 }
