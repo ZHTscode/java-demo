@@ -5,7 +5,7 @@ import java.util.Deque;
 import java.util.LinkedList;
 
 public class DailyTemperatures {
-    /* 739.温度 */
+    /* 739. 每日温度 */
     /* 解法一：暴力解法 提交超时 */
     public int[] dailyTemperatures(int[] temperatures) {
         int pre = 0;
@@ -26,7 +26,7 @@ public class DailyTemperatures {
         return res;
     }
     /* 解法二：单调递减栈（栈存下标）
-       栈中存储数组的下标，栈内下标的对应温度值单调递减 */
+       栈存下标，栈内下标的对应温度值单调递减 */
     public int[] dailyTemperatures2(int[] temperatures) {
         int n = temperatures.length;
         int[] answer = new int[n];

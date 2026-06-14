@@ -5,26 +5,33 @@ import java.util.*;
 public class GroupAnagrams {
     /* 49. 字母异位词分组 */
     public List<List<String>> groupAnagrams(String[] strs) {
-        // 哈希表：key=排序后的字符串，value=对应的异位词列表
+        // key=排序后的字符串，value=对应的异位词列表
         Map<String, List<String>> map = new HashMap<>();
         for (String s : strs) {
-            // 1. 将字符串转为字符数组，方便排序
-            char[] charArr = s.toCharArray();
-            // 2. 排序（核心：异位词排序后结果一致）
+            char[] charArr = s.toCharArray(); // 字符串转为字符数组，方便排序
             Arrays.sort(charArr);
-            // System.out.println(charArr);
-            // 3. 转回字符串作为key
-            String key = new String(charArr);
-            // 4. 分组：key不存在则创建新列表，存在则直接添加
-            if (!map.containsKey(key)) {
+            String key = new String(charArr); // 转回字符串作为key
+            if (!map.containsKey(key)) { // key不存在则创建
                 map.put(key, new ArrayList<>());
             }
-            map.get(key).add(s); // 无论列表是否新建，都统一添加元素
-            System.out.println(key + " : " + map.get(key));
+            map.get(key).add(s); // 添加元素
         }
-        // 5. 哈希表的value集合就是最终结果
-        return new ArrayList<>(map.values());
+        return new ArrayList<>(map.values()); // 哈希表的value集合强转为ArrayList
     }
+
+    public List<List<String>> groupAnagrams2(String[] strs) {
+        Map<String, List<String>> m = new HashMap<>();
+        for (String s : strs) {
+            char[] array = s.toCharArray();
+            Arrays.sort(array);
+            String k = new String(array);
+            List<String> list = m.getOrDefault(k, new ArrayList<>());
+            list.add(s);
+            m.put(k, list);
+        }
+        return new ArrayList<>(m.values());
+    }
+
     public static void main(String[] args) {
         GroupAnagrams ga = new GroupAnagrams();
         String[] strs = {"eat", "tea", "tan", "ate", "nat", "bat"};

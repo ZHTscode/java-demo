@@ -1,11 +1,12 @@
 package solution;
 
-import java.util.Stack;
+import java.util.Deque;
+import java.util.LinkedList;
 
 public class IsValid {
     /* 20. 有效的括号 */
     public boolean isValid(String s) {
-        Stack<Character> stack = new Stack<>();
+        Deque<Character> stack = new LinkedList<>();
         for (char c : s.toCharArray()) {
             if (c == '(') stack.push(')');
             else if (c == '[') stack.push(']');

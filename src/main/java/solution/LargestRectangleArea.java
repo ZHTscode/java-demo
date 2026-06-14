@@ -1,6 +1,7 @@
 package solution;
 
-import java.util.Stack;
+import java.util.Deque;
+import java.util.LinkedList;
 
 public class LargestRectangleArea {
     /* 84.柱状图中最大的矩形 */
@@ -28,9 +29,9 @@ public class LargestRectangleArea {
        宽度 = 右边界 - 左边界 - 1
        面积 = heights[i] × 宽度
        一次遍历找到左右边界 O(n) */
-    public int largestRectangleArea2(int[] heights) {
+    public static int largestRectangleArea2(int[] heights) {
         int n = heights.length;
-        Stack<Integer> stack = new Stack<>();
+        Deque<Integer> stack = new LinkedList<>();
         int maxArea = 0; // 全局变量
         for (int i = 0; i <= n; i++) { // 多一个 n 作为哨兵
             // 当前高度（i=n 时为 0，确保所有柱子都被处理）

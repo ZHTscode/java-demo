@@ -6,15 +6,15 @@ import java.util.Stack;
 
 // 在常数时间 O(1) 内获取栈内最小值的特殊栈结构
 
-// 方法一：基于双栈实现
+// 方法一：基于双栈实现，一个栈存储数据，另一个栈存储到栈底的最小值，长度相同
 public class MinStack {
     /* 155. 最小栈 */
-    private Stack<Integer> dataStack;
-    private Stack<Integer> minStack;
+    private Deque<Integer> dataStack;
+    private Deque<Integer> minStack;
 
     public MinStack() {
-        dataStack = new Stack<>();
-        minStack = new Stack<>();
+        dataStack = new LinkedList<>();
+        minStack = new LinkedList<>();
     } // 构造方法
 
     public void push(int val) {
@@ -84,7 +84,7 @@ class MinStack3 {
 
     // 初始化
     public MinStack3() {
-        stack = new LinkedList(); // 初始化双端队列，使用LinkedList实现
+        stack = new LinkedList<>(); // 初始化双端队列，使用LinkedList实现
     }
 
     // 入栈

@@ -2,7 +2,6 @@ package solution;
 
 import java.util.ArrayDeque;
 import java.util.Deque;
-import java.util.Stack;
 
 public class DecodeString {
     /* 394. 字符串解码 */
