@@ -1,13 +1,11 @@
-package solution;
+package solution.labuladong.array.twoPtrArray;
 
 import java.util.Arrays;
 
 public class SortColors {
-    /* 75. 颜色分类
-       排序三个元素：最小的在前，最大的在后
-       核心：双指针 */
+    /* 75. 颜色分类 */
     public void sortColors(int[] nums) {
-        int zero = 0, two = nums.length - 1;
+        int zero = 0, two = nums.length - 1; // zero左侧为0，two右侧为2
         for (int i = 0; i <= two; i++) {
             while (nums[i] == 2 && i < two){
                 swap(nums, i, two);

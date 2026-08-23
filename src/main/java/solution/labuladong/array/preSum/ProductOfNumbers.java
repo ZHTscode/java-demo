@@ -1,4 +1,4 @@
-package solution.labuladong.preSum;
+package solution.labuladong.array.preSum;
 
 import java.util.ArrayList;
 import java.util.List;

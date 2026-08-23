@@ -1,4 +1,4 @@
-package solution.labuladong.preSum;
+package solution.labuladong.array.preSum;
 
 public class PivotIndex {
     public int pivotIndex(int[] nums) {
