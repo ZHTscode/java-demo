@@ -18,15 +18,15 @@ public class RandomSelect {
     public int pickIndex() { // 根据权重随机选择一个下标
         int target = rand.nextInt(preSum[preSum.length - 1]) + 1; // 随机选择一个目标值
         int left = 0, right = preSum.length - 1;
-        while (left < right) { // 二分查找目标值
+        while (left <= right) { // 二分查找目标值
             int mid = left + (right - left) / 2;
             if (preSum[mid] < target) {
                 left = mid + 1; // 目标值在右半边
             } else {
-                right = mid; // 目标值在左半边
+                right = mid - 1; // 目标值在左半边
             }
         }
-        return left - 1; // 此时 left == right
+        return left - 1;
     }
 
     public static void main(String[] args) {

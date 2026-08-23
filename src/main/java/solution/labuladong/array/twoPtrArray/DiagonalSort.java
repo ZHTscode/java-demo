@@ -20,7 +20,6 @@ public class DiagonalSort {
             // diagonal.sort((a, b) -> a - b);
             // diagonal.sort((a, b) -> a.compareTo(b));
         }
-        int p = 0;
         for(int i=0; i<m; i++){
             for(int j=0; j<n; j++){
                 // 按顺序取出对角线第一个元素，然后删掉

@@ -11,7 +11,7 @@ public class RemoveDuplicates {
                 slow++;
                 // 维护 nums[0..slow] 无重复
                 nums[slow] = nums[fast];
-                System.out.println(Arrays.toString(nums));
+                // System.out.println(Arrays.toString(nums));
             }
             fast++;
         }

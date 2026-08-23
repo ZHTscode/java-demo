@@ -9,7 +9,7 @@ public class SubarraysDivByK {
         int n = nums.length;
         int[] preSum = new int[n+1];
         Map<Integer, Integer> valToCount = new HashMap<>();
-        valToCount.put(0, 1); // 前缀和为0的个数为1
+        valToCount.put(0, 1); // 除k余0的个数为1
         int res = 0;
 
         for(int i=1; i<=n; i++){
