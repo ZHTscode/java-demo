@@ -6,7 +6,7 @@ import utils.TreeNodeUtil;
 import java.util.HashMap;
 import java.util.Map;
 
-public class constructFromPreMid {
+public class ConstructFromPreMid {
     /* 105. 从前序与中序遍历序列构造二叉树$$ */
     Map<Integer, Integer> valToIndex = new HashMap<>();
     public TreeNode buildTree(int[] preorder, int[] inorder) {
@@ -29,7 +29,7 @@ public class constructFromPreMid {
     }
 
     public static void main(String[] args) {
-        constructFromPreMid solution = new constructFromPreMid();
+        ConstructFromPreMid solution = new ConstructFromPreMid();
         int[] preorder = {3,9,20,15,7};
         int[] inorder = {9,3,15,20,7};
         TreeNode root = solution.buildTree(preorder, inorder);
