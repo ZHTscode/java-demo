@@ -1,6 +1,6 @@
 package test;
 
-import solution.CanFinish;
+import solution.prev.CanFinish;
 
 public class TestCanFinish {
     public static void main(String[] args) {

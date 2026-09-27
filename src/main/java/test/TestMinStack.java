@@ -1,6 +1,6 @@
 package test;
 
-import solution.MinStack;
+import solution.prev.MinStack;
 
 public class TestMinStack {
     public static void main(String[] args) {
